@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Trigger</title>
+  <style>
+    .container {
+      transition: all 0.5s;
+    }
+  
+    .gambar, .gambar2 {
+      transition: transform 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="gambar" id="center">Center Content</div>
+    <div class="gambar2" id="middle">Middle Content</div>
+    <div class="image-track">
+      <img class="gambar" src="image1.jpg" />
+      <div class="sada">
+        <div class="asda"><div class="ada">
+      <img class="gambar2" src="image2.jpg" />
+            
+        </div></div>
+      </div>
+      <!-- Add more images as needed -->
+    </div>
+  </div>
+
+  <script>
+    const container = document.querySelector('.container');
+    const gambar = document.getElementsByClassName('gambar');
+    const gambar2 = document.getElementsByClassName('gambar2');
+
+    function toggleClass(elements, className) {
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.toggle(className);
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      container.classList.toggle("open");
+      toggleClass(gambar, 'open');
+      toggleClass(gambar2, 'open');
+    });
+  </script>
+</body>
+</html>
